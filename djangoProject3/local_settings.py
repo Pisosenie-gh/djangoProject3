@@ -10,7 +10,14 @@ SECRET_KEY = 'j7f0yzi(eo9hgcs_ah=lczfy=-to%t+)c+mkwo&hir(k5m0&f7'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'journal.elab@gmail.com'
+EMAIL_HOST_PASSWORD = 'elabjournal'
+EMAIL_PORT = 587
+
+ALLOWED_HOSTS = ["127.0.0.1","185.5.206.55""]
 
 
 DATABASES = {
@@ -22,6 +29,5 @@ DATABASES = {
 
 
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

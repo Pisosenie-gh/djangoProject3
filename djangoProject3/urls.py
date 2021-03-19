@@ -28,7 +28,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('elabasia_digital_academyadmin/', admin.site.urls),
     path('', index, name = "index"),
     path('oferta', oferta, name = "oferta"),
     path('rep', include('core.urls')),
@@ -46,7 +46,7 @@ urlpatterns += i18n_patterns(
     path('', include("cores.urls")),
     path('', include('authapp.urls')),
     path('topback/', include('game.urls')),
-    
+
 
 )
 if settings.DEBUG:

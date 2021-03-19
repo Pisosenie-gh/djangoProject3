@@ -17976,9 +17976,11 @@ embed{
 .adaptivelogo{
 	text-align: center;
 	visibility: hidden;
+	display: none;
 }
 @media only screen and (max-width:992px){
 .adaptivelogo{
 	visibility: visible;
+	display: block;
 }
 	}

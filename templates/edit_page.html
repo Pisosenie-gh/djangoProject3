@@ -337,12 +337,13 @@ body{
 
 
                                     <div style="width:100%; ">
-                                      {% if request.user.photo.url == '' %}
-                                      <input type="hidden" name="user_photo" value="https://proumnyjdom.ru/wp-content/uploads/2019/05/word-image-30.jpeg">
+																			{% if request.user.profile.photo.url == request.user.profile.photo.url %}
+																				<input type="hidden" name="user_photo" value="{{request.user.profile.photo.url}}">
 
-                                  {%else%}
-                                  <input type="hidden" name="user_photo" value="{{request.user.profile.photo.url}}">
-                                  {%endif%}
+																			{%else%}
+																			<input type="hidden" name="user_photo" value="https://proumnyjdom.ru/wp-content/uploads/2019/05/word-image-30.jpeg">
+																			{%endif%}
+
 
                                       <input type="hidden" name="user_name" value="{{request.user.first_name}}">
                                       <input type="hidden" name="user_firstname" value="{{request.user.last_name}}">

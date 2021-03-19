@@ -45,6 +45,7 @@ class CustomSuccessMessageMixin:
         return '%s?id=%s' % (self.success_url, self.object.id)
 
 
+
 class HomeDetailView(CustomSuccessMessageMixin, FormMixin, HitCountDetailView):
     model = Articles
     template_name = 'detail.html'
@@ -52,7 +53,6 @@ class HomeDetailView(CustomSuccessMessageMixin, FormMixin, HitCountDetailView):
     form_class = CommentForm
     success_msg = 'Комментарий успешно создан, ожидайте модерации'
     count_hit = True
-
 
     def get_success_url(self, **kwargs):
 
@@ -119,12 +119,6 @@ class ArticleCreateView(LoginRequiredMixin, CustomSuccessMessageMixin, CreateVie
 
 
 
-
-
-
-
-
-
 class ArticleUpdateView(LoginRequiredMixin, CustomSuccessMessageMixin, UpdateView):
     model = Articles
     template_name = 'edit_page.html'
@@ -168,7 +162,7 @@ class Search(ListView):
 
 
     context_object_name = 'a'
-    
+
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context["q"] = f'q={self.request.GET.get("q")}&'

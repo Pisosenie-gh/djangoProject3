@@ -170,7 +170,7 @@
 
 
             <a class="btn btn-primary "href="{%url "home"%}">Назад к статьям</a>
-{% endblock %}
+            {% endblock %}
           </article> <!-- end .uou-block-7f -->
 
 
@@ -262,12 +262,18 @@
                   <div class="col-sm-12">
                       {% csrf_token %}
                     <textarea name = 'text' placeholder="Your comment"></textarea>
-                    {% if request.user.photo.url == '' %}
-                    <input type="hidden" name="user_photo" value="https://proumnyjdom.ru/wp-content/uploads/2019/05/word-image-30.jpeg">
+
+
+
+
+
+                    {% if request.user.profile.photo.url == request.user.profile.photo.url %}
+                      <input type="hidden" name="user_photo" value="{{request.user.profile.photo.url}}">
 
                     {%else%}
-                    <input type="hidden" name="user_photo" value="{{request.user.profile.photo.url}}">
+                    <input type="hidden" name="user_photo" value="https://proumnyjdom.ru/wp-content/uploads/2019/05/word-image-30.jpeg">
                     {%endif%}
+
 
                     <input type="hidden" name="user_name" value="{{request.user.first_name}}">
                     <input type="hidden" name="user_firstname" value="{{request.user.last_name}}">
